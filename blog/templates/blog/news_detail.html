@@ -41,8 +41,8 @@
                 <p> <b>Текст сообщения:</b></p>
                 <p>{{ com.text }}</p>
                  <hr>
-                <p> <b>Пользователь:</b> {{ com.user }} </p>
-                 <p><b>Время: </b> {{ com.date|date:"d E Y, в: H:i:s" }}</p>
+                <p class="user-time"> <b>Пользователь:</b> {{ com.user }} <b class="time">Время: </b> {{ com.date|date:"d E Y, в: H:i:s" }}</p>
+
              </div>
             {% endfor %}
         </div>
