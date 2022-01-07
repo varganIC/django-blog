@@ -9,7 +9,7 @@
         <div class="news">
             <h1>{{ post.title }}</h1>
             <p>{{ post.text|truncatechars:300 }}</p>
-            <div class="row">
+            <div class="row col-xs-12">
                 <div>
                     <img src="{{ post.avtor.profile.img.url }}" alt="{{ post.avtor }}" class="user_images">
                 </div>
