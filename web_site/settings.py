@@ -124,7 +124,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / "static"
 ]
-STATIC = BASE_DIR / "/static/"
+STATIC_ROOT = BASE_DIR / "/static/"
 
 LOGIN_REDIRECT_URL = 'profile'
 LOGIN_URl = 'user'
