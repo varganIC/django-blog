@@ -1,0 +1,18 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+
+{% block content %}
+<div class="container align-items-center">
+   <h1 class="display-3">Простой и удобный интерфейс</h1>
+    <p class="display-4">Делаем работу быстро и качественно</p>
+    <div>
+        <a href="{% url 'uslugi-page' %}" class="btn btn-danger">Просмотреть услуги</a>
+    </div>
+</div>
+{% endblock %}
+
+

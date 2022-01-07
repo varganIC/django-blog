@@ -1,0 +1,53 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block content %}
+    <div class="news">
+        <h1>{{ post.title }}</h1>
+        <p>{{ post.text }}</p>
+        <div class="row">
+            <div>
+                <img src="{{ post.avtor.profile.img.url }}" alt="{{ post.avtor }}" class="user_images">
+            </div>
+            <div class="mt-2">
+                <span class="text-muted">Публикация: {{ post.date|date:"d E Y, в: H:i:s" }}</span>
+                <p><b>Автор:</b><a href="{% url 'user-news' post.avtor %}">{{ post.avtor }}</a></p>
+            </div>
+        </div>
+        {% if user == post.avtor %}
+            <hr>
+            <a href="{% url 'news_update' post.id %}" class="btn btn-outline-info mb-3">Редактировать статью</a>
+            <a href="{% url 'news_delete' post.id %}" class="btn btn-outline-danger mb-3">Удалить статью</a>
+        {% endif %}
+    </div>
+    <div class="right-content">
+        {% if user.is_authenticated %}
+        <div class="form-coment mt-2">
+            <h2>Коментарий</h2>
+            <form method="post" class="register-coment">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button class="btn btn-success" type="submit">Отправить</button>
+            </form>
+        </div>
+        {% endif %}
+        <h2 class="mt-2">Коментарии</h2>
+        <div class="all-coment mt-2">
+            {% for com in comments %}
+             <div class="coments">
+                <p> <b>Текст сообщения:</b></p>
+                <p>{{ com.text }}</p>
+                 <hr>
+                <p> <b>Пользователь:</b> {{ com.user }} </p>
+                 <p><b>Время: </b> {{ com.date|date:"d E Y, в: H:i:s" }}</p>
+             </div>
+            {% endfor %}
+        </div>
+
+
+
+    </div>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}
+    Страница с контактами
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container">
+    <h1>Страница с контактами</h1>
+    <form method="post" class="form-register">
+        {% csrf_token %}
+        {{ sendMessage.as_p }}
+        <hr>
+        <button class="btn btn-outline-success" type="submit">Отправить сообщение</button>
+    </form>
+</div>
+{% endblock %}
