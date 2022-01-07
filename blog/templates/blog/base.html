@@ -63,12 +63,14 @@
 
     <div class="container-fluid" id="content">
 
-            {% if messages %}
-                {% for mes in messages%}
-                    <div class="alert alert-success">{{ mes }}</div>
-                {% endfor %}
-            {% endif %}
+
             <div class="main">
+                {% if messages %}
+                    {% for mes in messages%}
+                        <div class="alert alert-success">{{ mes }}</div>
+                    {% endfor %}
+                {% endif %}
+
                 {% block content %}
                 {% endblock %}
             </div>
