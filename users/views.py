@@ -12,7 +12,7 @@ def register(request):
             form.save()
             username = form.cleaned_data.get('username')
             messages.success(request, f'Пользователь {username} был успешно зарегистрирован')
-            return redirect('home-page')
+            return redirect('user')
     else:
         form = UserRegisterForm()
 
