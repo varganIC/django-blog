@@ -133,7 +133,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 LOGIN_REDIRECT_URL = 'profile'
 LOGIN_URl = 'user'
 
-# STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 MEDIA_URL = '/pictures/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'pictures')
 
