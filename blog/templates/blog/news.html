@@ -6,7 +6,7 @@
 
 {% block content %}
     {% for post in news %}
-        <div class="news">
+        <div class="news mt-5 mb-5">
             <h1>{{ post.title }}</h1>
             <p>{{ post.text|truncatechars:300 }}</p>
             <div class="row col-xs-12">
@@ -23,7 +23,7 @@
     {% endfor %}
 
     {% if is_paginated %}
-    <div class="navig">
+    <div class="navig mb-5">
         {% if page_obj.has_previous %}
             <a href="{% url 'news-page'  %}" class="btn btn-outline-danger mb-2">Начало</a>
             <a href="?page={{ page_obj.previous_page_number }}" class="btn btn-outline-danger mb-2">Предыдущая</a>

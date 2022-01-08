@@ -7,13 +7,14 @@
 
 
 {% block content %}
-<div class="container">
+
+<div class="container" id="contact">
     <h1>{{ title }}</h1>
     <form method="post" class="form-register auth">
         {% csrf_token %}
         {{ form.as_p }}
-        <button class="btn btn-outline-danger" type="submit">{{ btn_text }}</button>
 
+        <button class="btn btn-outline-danger" type="submit">{{ btn_text }}</button>
     </form>
 </div>
 {% endblock %}
